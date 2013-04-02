@@ -1,0 +1,15 @@
+#
+# Miscellaneous I2C chip drivers configuration
+#
+# *** DEPRECATED! Do not add new entries! See Makefile ***
+#
+
+menu "Miscellaneous I2C Chip support"
+
+config WMT_I2C_API
+    tristate "WMT I2C Device driver API"
+    depends on I2C && ARCH_WMT
+	help
+	This module export i2c read/write API for other modules
+
+endmenu

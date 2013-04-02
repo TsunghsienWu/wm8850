@@ -1,0 +1,14 @@
+menu "Viatelecom OEM funtion support"
+
+config VIATELECOM_SYNC_CBP
+	bool "Ap Sync Cbp"
+	help
+      The synchronous mechanism for the data exchage between Ap and Cbp.
+
+config VIATELECOM_POWER_CBP
+	bool "AP Power Cbp"
+	help
+	  Enable this driver to support to control funtion such as reset, power
+	  between AP and Cbp.
+
+endmenu

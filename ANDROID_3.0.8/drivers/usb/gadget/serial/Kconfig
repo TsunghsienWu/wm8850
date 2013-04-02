@@ -1,0 +1,8 @@
+#
+# usb tty configuration
+#
+config USB_GADGET_SERIAL
+	tristate "Enable usb tty"
+	depends on USB_GADGET
+	help
+	  Enable the device-side support for usb tty

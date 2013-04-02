@@ -1,0 +1,16 @@
+#
+# ZET6221 capacity touch screen driver configuration
+#
+config WMT_SWITCH
+	tristate "WMT GPIO Switch Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with switch
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called wmt_switch
+

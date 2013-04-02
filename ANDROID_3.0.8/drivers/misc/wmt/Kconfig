@@ -1,0 +1,7 @@
+menu "WMT EBM Controller "
+config WMT_EBM
+	tristate "EBM"
+	help
+	  This enables the shared transport core driver for WMT
+	  EBM drivver. 
+endmenu

@@ -1,0 +1,18 @@
+menuconfig TEST_SKELETON
+	bool "test skeleton"
+	help
+	  Say Y here to get to see options for device drivers from various
+	  different categories. This option alone does not add any kernel code.
+	  If you say N, all options in this submenu will be skipped and disabled.
+	  
+if TEST_SKELETON
+
+config GPIO_TEST
+	tristate "TEST GPIO API"
+	help
+	  verify this gpio api is ok or not.
+	  you should have hardware test enviroment,for example you can
+	  measure specific gpio pin by multimeter with echo xx > /proc/test command together
+
+	  
+endif

@@ -1,0 +1,137 @@
+#
+# WMT Sensor configuration
+#
+menuconfig INPUT_SENSOR
+	bool "WMT Sensor"
+	default y
+	help
+	  Say Y here, and a list of supported sensor will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if INPUT_SENSOR
+
+config WMT_SENSOR_KXTE9
+	tristate "KXTE9 G-Sensor Support"
+	depends on ARCH_WMT
+	default n
+	help
+	  Say Y here if you have an WMT based board with g-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called s_wmt_gsensor_mc3230.
+config WMT_SENSOR_MC3230
+	tristate "Mcube MC3230 G-Sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with g-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_kxte9.
+
+config WMT_SENSOR_DMARD08
+	tristate "DMARD08 G-Sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with g-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_dmard08.
+config WMT_SENSOR_DMARD06
+	tristate "DMARD06 G-Sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with g-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_dmard06.
+config WMT_SENSOR_DMARD10
+	tristate "DMARD10 G-Sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with g-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_dmard10.
+config WMT_SENSOR_MXC622X
+	tristate "MXC622X G-Sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with g-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_mxc622x.
+config WMT_SENSOR_MMA7660
+	tristate "MMA7660 G-Sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with g-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_mma7660.
+config WMT_SENSOR_ISL29023
+	tristate "ISL29023 Light sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with l-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_isl29023.
+config WMT_SENSOR_CM3232
+	tristate "CM3232 Light sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with l-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_cm3232.
+config WMT_SENSOR_STK3310
+	tristate "STK3310 Light sensor Support"
+	depends on ARCH_WMT
+	default y
+	help
+	  Say Y here if you have an WMT based board with l-sensor 
+	  attached to it.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sensor_stk3310.
+	 
+endif

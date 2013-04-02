@@ -1,0 +1,44 @@
+if ARCH_WMT
+
+menu "WonderMedia Technology Implementations"
+
+config WMT_EVB
+        bool "WonderMedia Technology Evaluation Board"
+        depends on ARCH_WMT
+        default y
+	---help---
+	  Say Y here if you want to config the WonderMedia Technology specific parameters.
+
+choice
+	prompt "Select WonderMedia Technology evaluation board type"
+	depends on WMT_EVB
+	default WM0001
+	---help---
+	  Choose the type of WonderMedia Technology evaluation board type.
+	  There are four types of WonderMedia Technology EVB, depend on the mounted components.
+
+config WM0001
+	bool "WM0001"
+	---help---
+	  Say Y here if you intend to build kernel on VT9043A1.
+
+endchoice
+
+config WMT_USE_BOOTLOADER_ATAG
+	bool "Bootloader kernel parameter support"
+	depends on WMT_EVB
+	---help---
+	Say Y here if you want to use kernel parameters passed from the arm bootloader.
+
+config WMT_FIXUP_ATAG
+	bool "Force to fixup kernel parameter"
+	depends on WMT_EVB && WMT_USE_BOOTLOADER_ATAG
+	---help---
+	  Say Y here if you want to fixup the WonderMedia Technology kernel boot parameters.
+	  It is a temp solution if ATAG passing have problem or you don't 
+	  know how exactly setup kernel parameters.
+	  
+endmenu
+
+endif
+

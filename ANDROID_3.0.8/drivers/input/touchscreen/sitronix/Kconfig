@@ -1,0 +1,11 @@
+config TOUCHSCREEN_SITRONIX
+        tristate "Sitronix ST1xx series Capacity Touchscreen Device Support"
+        default m
+        depends on ARCH_WMT
+        ---help---
+          Say Y here if you have an WMT based board with touchscreen
+          attached to it.
+          If unsure, say N.
+          To compile this driver as a module, choose M here: the
+          module will be called s_wmt_ts_sitronix.ko.
+

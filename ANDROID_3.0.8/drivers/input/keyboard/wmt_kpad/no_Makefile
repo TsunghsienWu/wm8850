@@ -1,0 +1,4 @@
+
+#obj-$(CONFIG_KEYBOARD_WMT)		+= wmt_kpad/
+kpad-objs += kpad_colrow.o wmt_keypadall.o
+obj-$(CONFIG_KEYBOARD_WMT)		+= kpad.o

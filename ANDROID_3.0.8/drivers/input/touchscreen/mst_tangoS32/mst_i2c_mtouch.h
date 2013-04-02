@@ -1,0 +1,73 @@
+#ifndef _LINUX_MST_I2C_MTOUCH_H
+#define _LINUX_MST_I2C_MTOUCH_H
+
+#define MST_I2C_ADDR  	0x5c
+#define MST_I2C_BUS_ID 	0x01
+
+#undef abs
+#define abs(x) (((x)>0)?(x):(-(x)))
+#define MST_JITTER_THRESHOLD 200
+
+enum mst_registers {
+
+	MST_TOUCH = 0x0,
+	MST_PREV_TOUCH,//0x01
+
+	MST_POS_X_LOW,//0x02
+	MST_POS_X_HI,//0x03
+	MST_POS_Y_LOW,//0x04
+	MST_POS_Y_HI,//0x05
+	MST_POS_X2_LOW,//0x06
+	MST_POS_X2_HI,//0x07
+	MST_POS_Y2_LOW,//0x08
+	MST_POS_Y2_HI,//0x09
+
+	MST_AREA_X,//0x0a
+	MST_AREA_Y,//0x0b
+	MST_AREA_X2,//0x0c
+	MST_AREA_Y2,//0x0d
+	MST_DIST_X,//0x0e
+	MST_DIST_Y,//0x0f
+	MST_DIST_X2,//0x10
+	MST_DIST_Y2,//0x11
+	MST_STRNGTH_LOW,//0x12
+	MST_STRNGTH_HI,//0x13
+
+	MST_PWR_MODE,//0x14
+	MST_INT_MODE,//0x15
+	MST_INT_WIDTH,//0x16
+	MST_NOIS_MODE,//0x17
+	MST_NOIS_THRHOLD,//0x18
+	MST_NOIS_LVL,//0x19
+
+	MST_VER = 0x30,
+	MST_SUBVER = 0x34,
+	MST_CRC_HI,
+	MST_CRC_LOW,
+	MST_SPECOP,
+};
+
+enum mst_pwr_mode {
+
+	MST_PWR_ACT = 0x0,
+	MST_PWR_SLEEP,
+	MST_PWR_DSLEEP,
+	MST_PWR_FREEZE,
+};
+
+enum mst_int_mode {
+
+	MST_INT_PERIOD = 0x0,
+	MST_INT_FMOV,
+	MST_INT_FTOUCH,
+};
+
+#define MST_INT_TRIG_LOW_EN 	0x4
+#define MST_PWR_ASLEEP_EN 		MST_INT_TRIG_LOW_EN
+enum mst_int_trig {
+
+	MST_INT_TRIG_LOW = 0x0,
+	MST_INT_TRIG_HI,
+};
+
+#endif 	/* _LINUX_MST_I2C_MTOUCH_H */
