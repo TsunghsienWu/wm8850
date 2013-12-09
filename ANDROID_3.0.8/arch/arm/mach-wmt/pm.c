@@ -141,7 +141,14 @@ extern unsigned int wmt_read_oscr(void);
 extern void wmt_read_rtc(unsigned int *date, unsigned int *time);
 
 // import extern function for usb-charge
+#ifdef CONFIG_BATTERY_WMT
 extern int wmt_batt_charge_type(void);
+#else
+static int wmt_batt_charge_type(void)
+{
+	return 0; /* AC */
+}
+#endif
 extern int wmt_read_dcin_state(void);
 
 

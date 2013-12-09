@@ -71,7 +71,14 @@ MODULE_LICENSE("GPL");
 MODULE_VERSION("1.0");
 
 extern void pull_charge_elec_pin(int largeElec);
+#ifdef CONFIG_BATTERY_WMT
 extern int wmt_batt_charge_type();
+#else
+static int wmt_batt_charge_type()
+{
+	return 0; /* AC */
+}
+#endif
 
 static const char longname[] = "Gadget Android";
 

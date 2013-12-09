@@ -175,7 +175,14 @@ static unsigned int handled_id=0;
 
 static int udc_wmt_suspend = 0;
 
+#ifdef CONFIG_BATTERY_WMT
 extern int wmt_batt_charge_type();
+#else
+static int wmt_batt_charge_type()
+{
+	return 0; /* AC */
+}
+#endif
 extern void pull_charge_elec_pin(int largeElec);
 
 /**
