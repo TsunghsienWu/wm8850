@@ -3,7 +3,7 @@ KERNELDIR=../../../../
 PWD=`pwd`
 MODULE_NAME=kpad
 
-CROSS = arm_1103_le-
+CROSS = $(CROSS_COMPILE)
 CC=	$(CROSS)gcc
 LD=	$(CROSS)ld
 STRIP=  $(CROSS)strip

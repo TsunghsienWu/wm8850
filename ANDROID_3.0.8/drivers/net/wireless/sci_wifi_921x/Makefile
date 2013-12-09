@@ -21,7 +21,7 @@ KERNEL_DIR := /home/kevinguan/8850/ANDROID_3.0.8
 #KERNEL_DIR := /home/zk/lichee/linux-3.0
 
 #TOOL_CHAIN := arm-none-linux-gnueabi-
-TOOL_CHAIN := arm_1103_le-
+TOOL_CHAIN := $(CROSS_COMPILE)
 
 
 all : modules

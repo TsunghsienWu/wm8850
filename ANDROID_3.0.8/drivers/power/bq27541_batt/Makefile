@@ -1,6 +1,6 @@
 KERNELDIR=/home/hangyan/android8850/kernel/ANDROID_3.0.8
 #KERNELDIR=../../../../
-CROSS = arm_1103_le-
+CROSS = $(CROSS_COMPILE)
 CC=		$(CROSS)gcc
 LD=		$(CROSS)ld
 STRIP = $(CROSS)strip
